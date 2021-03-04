@@ -1,13 +1,15 @@
 package com.givekesh.movies.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.hilt.Assisted
+import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class HomeViewModel @ViewModelInject constructor(
+    @Assisted savedStateHandle: SavedStateHandle
+) : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    init {
+
     }
-    val text: LiveData<String> = _text
 }
