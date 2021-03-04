@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        applicationId "com.givekesh.movies"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation deps.androidx.core_ktx
+    implementation deps.androidx.appcompat
+    implementation deps.material
+    implementation deps.androidx.constraintlayout
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui_ktx
+    implementation deps.androidx.swiperefreshlayout
+    testImplementation deps.junit
+    androidTestImplementation deps.androidx.ext_junit
+    androidTestImplementation deps.androidx.espresso
+
+    implementation deps.hilt.android
+    kapt deps.hilt.android_compiler
+
+    implementation deps.hilt.viewModel
+    kapt deps.hilt.compiler
+
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.gson
+
+    implementation deps.room.runtime
+    implementation deps.room.ktx
+    kapt deps.room.compiler
+
+    implementation deps.coroutines.android
+    implementation deps.coroutines.core
+}
