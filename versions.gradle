@@ -16,6 +16,7 @@ versions.room = '2.3.0-alpha03'
 versions.coroutines = '1.4.1'
 versions.AGP = '7.0.0-alpha08'
 versions.kotlin = '1.4.30'
+versions.retrofit_bom = '4.9.0'
 ext.versions = versions
 
 def build_versions = [:]
@@ -48,6 +49,9 @@ deps.hilt = hilt
 def retrofit = [:]
 retrofit.runtime = "com.squareup.retrofit2:retrofit:$versions.retrofit"
 retrofit.gson = "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+retrofit.bom = "com.squareup.okhttp3:okhttp-bom:$versions.retrofit_bom"
+retrofit.okhttp = "com.squareup.okhttp3:okhttp"
+retrofit.interceptor = "com.squareup.okhttp3:logging-interceptor"
 deps.retrofit = retrofit
 
 def room = [:]
