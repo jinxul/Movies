@@ -13,9 +13,9 @@ class MoviesDiffCallBack(
     override fun getNewListSize(): Int = newList.size
 
     override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldList[oldItemPosition].id == newList[oldItemPosition].id
+        oldList[oldItemPosition].id == newList[newItemPosition].id
 
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean =
-        oldList[oldItemPosition].originalTitle == newList[oldItemPosition].originalTitle
+        oldList[oldItemPosition].originalTitle == newList[newItemPosition].originalTitle
 }
