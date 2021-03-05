@@ -17,7 +17,7 @@ data class MoviesResult(
     val overview: String,
     val popularity: Number,
     @SerializedName("poster_path")
-    @Nullable val poster_path: String,
+    @Nullable val posterPath: String,
     @SerializedName("release_date")
     val releaseDate: String,
     val title: String,
