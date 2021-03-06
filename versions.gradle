@@ -13,10 +13,11 @@ versions.hilt = '2.30.1-alpha'
 versions.hilt_viewModel = '1.0.0-alpha02'
 versions.retrofit = '2.9.0'
 versions.room = '2.3.0-alpha03'
-versions.coroutines = '1.4.1'
+versions.coroutines = '1.4.3'
 versions.AGP = '7.0.0-alpha08'
 versions.kotlin = '1.4.30'
 versions.retrofit_bom = '4.9.0'
+versions.glide = '4.12.0'
 ext.versions = versions
 
 def build_versions = [:]
@@ -74,6 +75,11 @@ androidx.ext_junit = "androidx.test.ext:junit:$versions.ext_junit"
 androidx.espresso = "androidx.test.espresso:espresso-core:$versions.espresso_core"
 androidx.datastore_preferences = "androidx.datastore:datastore-preferences:$versions.datastore"
 deps.androidx = androidx
+
+def glide = [:]
+glide.core = "com.github.bumptech.glide:glide:$versions.glide"
+glide.compiler = "com.github.bumptech.glide:compiler:$versions.glide"
+deps.glide = glide
 
 ext.deps = deps
 
